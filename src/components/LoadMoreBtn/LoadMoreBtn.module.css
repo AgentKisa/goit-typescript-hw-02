@@ -1,0 +1,17 @@
+.loadMore {
+    margin-top: 20px;
+}
+
+.button {
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #ff4081, #ff80ab);
+    border: none;
+    border-radius: 25px;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.button:hover {
+    background: linear-gradient(135deg, #ff80ab, #ff4081);
+}

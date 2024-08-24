@@ -1,0 +1,31 @@
+.searchBar {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto 20px auto;
+    display: flex;
+    align-items: center;
+}
+
+.input {
+    flex-grow: 1;
+    padding: 10px 20px;
+    border-radius: 25px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+}
+
+.button {
+    background: linear-gradient(135deg, #ff4081, #ff80ab);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-left: 10px;
+}
+
+.button:hover {
+    background: linear-gradient(135deg, #ff80ab, #ff4081);
+}
