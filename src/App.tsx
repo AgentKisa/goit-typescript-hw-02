@@ -8,20 +8,21 @@ import Loader from "./components/Loader/Loader";
 import LoadMoreBtn from "./components/LoadMoreBtn/LoadMoreBtn";
 import ImageModal from "./components/ImageModal/ImageModal";
 import ErrorMessage from "./components/ErrorMessage/ErrorMessage";
+import { Images } from "./types";
 
 function App() {
-  const [query, setQuery] = useState("");
-  const [page, setPage] = useState(1);
-  const [images, setImages] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(false);
-  const [isVisible, setIsVisible] = useState(false);
-  const [modalUrl, setModalUrl] = useState("");
-  const [modalAlt, setModalAlt] = useState("");
-  const [showedModal, setShowedModal] = useState(false);
+  const [query, setQuery] = useState<string>("");
+  const [page, setPage] = useState<number>(1);
+  const [images, setImages] = useState<Images[]>([]);
+  const [loading, setLoading] = useState<boolean>(false);
+  const [error, setError] = useState<boolean | null>(false);
+  const [isVisible, setIsVisible] = useState<boolean>(false);
+  const [modalUrl, setModalUrl] = useState<string>("");
+  const [modalAlt, setModalAlt] = useState<string>("");
+  const [showedModal, setShowedModal] = useState<boolean>(false);
 
-  useEffect(() => {
-    const handleSearch = async () => {
+  useEffect((): void => {
+    const handleSearch = async (): Promise<void> => {
       if (!query) {
         return;
       }
@@ -32,7 +33,6 @@ function App() {
 
         if (!results || results.length === 0) {
           toast.error("Something went wrong!");
-
           return;
         }
 
@@ -48,7 +48,7 @@ function App() {
     handleSearch();
   }, [query, page]);
 
-  const onHandleSubmit = (value) => {
+  const onHandleSubmit = (value: string): void => {
     if (value !== query) {
       setQuery(value);
       setImages([]);
@@ -57,17 +57,17 @@ function App() {
       setError(null);
     }
   };
-  const loadMore = () => {
+  const loadMore = (): void => {
     setPage((prevPage) => prevPage + 1);
   };
 
-  const openModal = (url, alt) => {
+  const openModal = (url: string, alt: string): void => {
     setShowedModal(true);
     setModalUrl(url);
     setModalAlt(alt);
   };
 
-  const closeModal = () => {
+  const closeModal = (): void => {
     setShowedModal(false);
     setModalUrl("");
     setModalAlt("");

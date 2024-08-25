@@ -14,7 +14,19 @@ const customStyles = {
 
 Modal.setAppElement("#root");
 
-const ImageModal = ({ modalIsOpen, closeModal, src, alt }) => {
+interface ImagesListProps {
+  modalIsOpen: boolean;
+  closeModal: () => void;
+  src: string;
+  alt: string;
+}
+
+const ImageModal: React.FC<ImagesListProps> = ({
+  modalIsOpen,
+  closeModal,
+  src,
+  alt,
+}) => {
   return (
     <Modal
       isOpen={modalIsOpen}
