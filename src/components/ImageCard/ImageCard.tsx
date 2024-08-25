@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./ImageCard.module.css";
-import { Images } from "../../types";
+import { Image } from "../../types";
 
 interface ImagesListProps {
   urls: {

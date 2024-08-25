@@ -1,11 +1,10 @@
 import React from "react";
 import ImageCard from "../ImageCard/ImageCard";
 import styles from "./ImageGallery.module.css";
-import { Images } from "../../types";
+import { Image } from "../../types";
 
 interface ImagesListProps {
-  images: Images[];
-
+  images: Image[];
   openModal: (url: string, alt: string) => void;
 }
 
